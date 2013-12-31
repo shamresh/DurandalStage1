@@ -20,10 +20,10 @@
     //}];
     
     var routes = [ {
-        route: 'speakers',
-        moduleId: 'viewmodels/speakers',
-        name: 'speakers',
-        visible: 'true'
+        route: '',
+        moduleId: 'speakers',
+        title: 'speakers',
+        nav: 1
     }];
 
     var startModule = 'speakers';

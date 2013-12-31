@@ -19,7 +19,7 @@ define(function (require) {
     var system = require('durandal/system'),
         app = require('durandal/app'),
         viewLocator = require('durandal/viewLocator'),
-        router = require('durandal/plugins/router'),
+        router = require('plugins/router'),
         logger = require('services/logger');
     
     //>>excludeStart("build", true);
@@ -29,9 +29,9 @@ define(function (require) {
     //app.title = 'Durandal Starter Kit';
 
     // Uncaught Error: Failed to load plugin(s). Details: Load timeout for modules: plugins/router
-    //app.configurePlugins({
-    //    router: true
-    //});
+    app.configurePlugins({
+        router: true
+    });
 
     app.start().then(function () {
         

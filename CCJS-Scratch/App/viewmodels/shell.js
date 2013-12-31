@@ -1,4 +1,4 @@
-﻿define(['durandal/system', 'services/logger', 'durandal/plugins/router', 'config'],
+﻿define(['durandal/system', 'services/logger', 'plugins/router', 'config'],
 
     function (system, logger, router, config) {
 
@@ -14,10 +14,24 @@
                 'it has started',
                 null, system.getModuleId(shell),
                 true);
-
+            
+            router.makeRelative({ moduleId: 'viewmodels' });
+            
             router.map(config.routes);
+            
+
+            //builds an observable model from the 
+            //mapping to bind your UI to
+            router.buildNavigationModel();
+
+            //sets up conventional mapping for 
+            //unrecognized routes
+            // router.mapUnknownRoutes();
+            
             //when router is done activating it will return a promise.
-            return router.activate(config.startModule);
+            // return router.activate(config.startModule);
+            // 2.0 dont need start module and return a promise.
+            router.activate();
         }
     }
 );
