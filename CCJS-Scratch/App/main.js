@@ -10,7 +10,8 @@
 define('jquery', function() { return jQuery; });
 define('knockout', ko);
 
-define(['durandal/system', 'durandal/app', 'durandal/viewLocator'],  function (system, app, viewLocator) {
+define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/router', 'services/logger'],
+                   function (system, app, viewLocator, router, logger) {
     //>>excludeStart("build", true);
     system.debug(true);
     //>>excludeEnd("build");
@@ -23,10 +24,23 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'],  function (s
     //    widget: true
     //});
 
-    app.start().then(function() {
+    app.start().then(function () {
+        
+        // router will use conventions for modules 
+        // assuming viewmodels/views folder structure.
+        router.useConvention()
+
         //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
         //Look for partial views in a 'views' folder in the root.
+        // This is used for composition.
+        // Defauls viewmodels/views/views.
         viewLocator.useConvention();
+        
+        // override bad router behaviour to write to console log and show error toast
+        // default is console window - i want in UI
+        router.handleInvalidRoute = function(route, params) {
+            logger.logError('No route found', route, 'main', true);
+        }
 
         //Show the app by setting the root view model for our application with a transition.
         //app.setRoot('viewmodels/shell', 'entrance');
