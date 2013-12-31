@@ -20,6 +20,8 @@ namespace CodeCamper.App_Start
                 .Include("~/scripts/jquery-{version}.js")
                 .Include("~/scripts/bootstrap.min.js")
                 .Include("~/scripts/knockout-{version}.debug.js")
+                .Include("~/scripts/sammy-{version}.js")
+                .Include("~/scripts/moment.min.js")
                 .Include("~/scripts/toastr.min.js")
                 //.Include("~/scripts/Q.js")
                 //.Include("~/scripts/breeze.debug.js")
