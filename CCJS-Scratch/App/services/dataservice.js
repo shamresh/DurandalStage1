@@ -27,6 +27,7 @@
                 
                 // want each object on wire to be converted into ko object with observable properties.
                 // Note do not need constructor function here but used anyway.
+                // Could used method on model and NOT constructor.
                 var s = new model.SpeakerPartial(item);
                 speakers.push(s);
             });
