@@ -10,25 +10,34 @@
 define('jquery', function() { return jQuery; });
 define('knockout', ko);
 
-define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/router', 'services/logger'],
-                   function (system, app, viewLocator, router, logger) {
+// Changed from below to this to try to avoid Uncaught Error: Failed to load plugin(s). Details: Load timeout for modules: plugins/router but
+// did not work.
+//define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/plugins/router', 'services/logger'],
+//                   function (system, app, viewLocator, router, logger) {
+
+define(function (require) {
+    var system = require('durandal/system'),
+        app = require('durandal/app'),
+        viewLocator = require('durandal/viewLocator'),
+        router = require('durandal/plugins/router'),
+        logger = require('services/logger');
+    
     //>>excludeStart("build", true);
     system.debug(true);
     //>>excludeEnd("build");
 
     //app.title = 'Durandal Starter Kit';
 
+    // Uncaught Error: Failed to load plugin(s). Details: Load timeout for modules: plugins/router
     //app.configurePlugins({
-    //    router: true,
-    //    dialog: true,
-    //    widget: true
+    //    router: true
     //});
 
     app.start().then(function () {
         
         // router will use conventions for modules 
         // assuming viewmodels/views folder structure.
-        router.useConvention()
+       // router.useConvention()
 
         //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
         //Look for partial views in a 'views' folder in the root.
