@@ -9,12 +9,11 @@
         </div>
     </header>
     <section data-bind="foreach: speakers" class="view-list">
-        <article>
+        <article class="article-left-content">
             <div>
                 <img data-bind="attr: {src: imageName}" class="img-thumbnail"/>
                 <address data-bind="text: firstName"></address>
                 <address data-bind="text: lastName"></address>
-
             </div>
         </article>
     </section>

@@ -5,7 +5,7 @@ using CodeCamper.model;
 
 namespace CodeCamper.controllers
 {
-    public class SessionController : ApiController
+    public class SessionsController : ApiController
     {
 
         public IEnumerable<object> Get()
@@ -15,13 +15,21 @@ namespace CodeCamper.controllers
                             {
                                 Id = 1,
                                 Title = "SPA",
-                                RoomId = 2
+                                RoomId = 2,
+                                FirstName = "Steve",
+                                LastName = "Sanderson",
+                                ImageSource = "steve_sanderson.jpg"
+
                             });
             list.Add(new Session()
                             {
                                 Id = 2,
                                 Title = "WCF",
-                                RoomId = 4
+                                RoomId = 4,
+                                FirstName="John",
+                                LastName = "Papa",
+                                ImageSource = "john_papa.jpg"
+
                             });
 
             return list;

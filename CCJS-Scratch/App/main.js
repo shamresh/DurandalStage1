@@ -37,7 +37,7 @@ define(function (require) {
         
         // router will use conventions for modules 
         // assuming viewmodels/views folder structure.
-       // router.useConvention()
+        //router.useConvention()
 
         //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
         //Look for partial views in a 'views' folder in the root.

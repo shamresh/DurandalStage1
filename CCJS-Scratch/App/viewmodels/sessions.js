@@ -1,25 +1,24 @@
 ﻿define(['services/logger', 'services/dataservice'], function(logger, dataservice) {
-        var speakers = ko.observableArray();
+        var sessions = ko.observableArray();
         var initialised = false;
 
         var vm = {
             activate: activate,
-            speakers: speakers,
-            title: 'Speakers',
+            sessions: sessions,
+            title: 'Sessions',
             refresh : refresh
           };
 
 
         function activate() {
-            logger.log('Speakers view has been activated ', null, null, true);
+            logger.log('Sessions view has been activated ', null, null, true);
             if (initialised) { return; };
             initialised = true;
             return refresh();
         }
         
         function refresh() {
-        
-            dataservice.getSpeakerPartials(speakers);
+            dataservice.getSessionPartials(sessions);
         }
         
         return vm;

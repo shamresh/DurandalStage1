@@ -4,11 +4,19 @@
 
         var shell = {
             activate: activate,
-            router : router // use for binding.
+            router: router, // use for binding.
+            compositionComplete : compositionComplete
         };
 
         return shell;
 
+        function compositionComplete() {
+            logger.log(
+                'CompositionComplete event has fired',
+                null, system.getModuleId(shell),
+                true);
+        }
+        
         function activate() {
             logger.log(
                 'it has started',

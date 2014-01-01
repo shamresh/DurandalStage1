@@ -13,8 +13,8 @@ namespace CodeCamper.controllers
                                 new Speaker()
                                 {
                                     Id = 1,
-                                    FirstName = "Shamresh",
-                                    LastName = "Khan",
+                                    FirstName = "Steven",
+                                    LastName = "Sanderson",
                                     ImageSource = "steve_sanderson.jpg"
                                 },
                                 new Speaker()

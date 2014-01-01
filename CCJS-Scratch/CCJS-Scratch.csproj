@@ -98,8 +98,11 @@
     <Content Include="App\main.js" />
     <Content Include="App\services\dataservice.js" />
     <Content Include="App\services\model.js" />
+    <Content Include="App\viewmodels\sessions.js" />
     <Content Include="App\viewmodels\speakers.js" />
     <Content Include="App\viewmodels\shell.js" />
+    <Content Include="App\views\nav.html" />
+    <Content Include="App\views\sessions.html" />
     <Content Include="App\views\speakers.html" />
     <Content Include="content\bootstrap-theme.css" />
     <Content Include="content\bootstrap-theme.min.css" />
@@ -206,7 +209,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="controllers\SessionController.cs" />
+    <Compile Include="controllers\SessionsController.cs" />
     <Compile Include="controllers\SpeakersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -8,9 +8,15 @@
     var SpeakerPartial = function (dto) {
         return addSpeakerPartialComputeds(mapToObservables(dto));
     };
+    
+    var SessionPartial = function (dto) {
+        // for now leave it as speakers.
+        return addSpeakerPartialComputeds(mapToObservables(dto));
+    };
 
     var model = {
-        SpeakerPartial: SpeakerPartial
+        SpeakerPartial: SpeakerPartial,
+        SessionPartial: SessionPartial
     };
 
     return model;

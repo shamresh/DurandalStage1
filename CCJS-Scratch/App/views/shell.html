@@ -1,19 +1,23 @@
 ﻿<div>
     <header>
-        <nav class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <a class="brand" href="/">
-                    <span class="title">Code Camper</span>
-                    <span class="jump-start-title">[Jumpstart] 
-                        <a href="http://jpapa.me/spajsps" style="float: right; font-size: 120%">Learn how to build a SPA</a></span>
-                </a>
-            </div>
-        </nav>
+        <!-- do not need nav model here as there is no viewmodel for nav.html. The view model is shell.js, which is being used
+            for the shell.html -->
+        <!-- ko compose: {view: 'nav'} -->
+        <!-- /ko-->
     </header>
     
+    <!-- The section tag will go get the current item that was navigated to and find its V and VM pair. 
+         It will place the View in this HTML tag and when it is done, 
+         it will invoke the compositionComplete (this is a handy feature that enables 
+         things like turning of a progress bar while composing).
+     -->
     <section id="content" class="navbar-inner navbar-secondary">
-        <!-- ko compose: {model: 'viewmodels/speakers', activate: true} -->
-        <!-- /ko -->
-
+        <!-- The following is the same as router:{cacheViews: true}-->
+        <!--ko compose: {
+            model: router.activeItem,
+            compositionComplete: router.compositionComplete,
+            attached: router.attached,
+            cacheViews:true} -->
+        <!--/ko-->
     </section>
 </div>
