@@ -98,9 +98,11 @@
     <Content Include="App\main.js" />
     <Content Include="App\services\dataservice.js" />
     <Content Include="App\services\model.js" />
+    <Content Include="App\views\mydialog.html" />
     <Content Include="App\viewmodels\sessions.js" />
     <Content Include="App\viewmodels\speakers.js" />
     <Content Include="App\viewmodels\shell.js" />
+    <Content Include="App\viewmodels\mydialog.js" />
     <Content Include="App\views\nav.html" />
     <Content Include="App\views\sessions.html" />
     <Content Include="App\views\speakers.html" />

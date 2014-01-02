@@ -1,7 +1,10 @@
 ﻿<section class="view">
     <header>
         <a class="btn btn-info btn-force-refresh pull-right" 
-            data-bind="click: refresh" href="#"><i class="icon-refresh"></i> Refresh</a>
+           data-bind="click: refresh" href="#"><i class="icon-refresh"></i> Refresh</a>
+        
+        <a class="btn btn-info btn-force-refresh pull-right" 
+            data-bind="click: showDialog" href="#"><i class="icon-refresh"></i> Dialog</a>
         <h3 class="page-title" data-bind="text: title"></h3>
         <div class="article-counter">
             <address data-bind="text: speakers().length"></address>

@@ -30,7 +30,8 @@ define(function (require) {
 
     // Uncaught Error: Failed to load plugin(s). Details: Load timeout for modules: plugins/router
     app.configurePlugins({
-        router: true
+        router: true,
+        dialog: true
     });
 
     app.start().then(function () {
