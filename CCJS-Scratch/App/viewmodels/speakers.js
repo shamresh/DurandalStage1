@@ -13,9 +13,12 @@
 
 
         function showDialog() {
-            return dialog.show(new mydialog('You have unsaved data. Are you sure you want to close?', 'Unsaved Data', ['Yes', 'No'])).then(function (dialogResult) {
+            return dialog.show(new mydialog('Are  you sure you want to add to the speakers observable?',
+                                            'Adding to observable array from dialog',
+                                            ['SI', 'NO'],
+                                            speakers)).then(function (dialogResult) {
                 //do something with the dialog result here
-                return app.showMessage('return');
+                return app.showMessage('return ' + dialogResult);
 
             });
           //  return app.showMessage('You have unsaved data. Are you sure you want to close?', 'Unsaved Data', ['Yes', 'No']);
